@@ -72,8 +72,24 @@ end
 # Variables
 set -q _flag_noconfirm && set noconfirm '--noconfirm'
 set -q _flag_paru && set -l aur_helper paru || set -l aur_helper yay
-set -q XDG_CONFIG_HOME && set -l config $XDG_CONFIG_HOME || set -l config $HOME/.config
-set -q XDG_STATE_HOME && set -l state $XDG_STATE_HOME || set -l state $HOME/.local/state
+
+# Ensure HOME is set properly
+if test -z "$HOME"
+    set HOME $HOME
+end
+
+# Set config and state directories
+if test -n "$XDG_CONFIG_HOME"
+    set -l config $XDG_CONFIG_HOME
+else
+    set -l config $HOME/.config
+end
+
+if test -n "$XDG_STATE_HOME"
+    set -l state $XDG_STATE_HOME
+else
+    set -l state $HOME/.local/state
+end
 
 # Startup prompt
 set_color magenta
