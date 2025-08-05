@@ -324,15 +324,13 @@ log 'Setting up KDE Plasma environment...'
 if confirm-overwrite $config/environment.d/kde-caelestia.conf
     log 'Installing KDE environment config...'
     mkdir -p $config/environment.d
-    cat > $config/environment.d/kde-caelestia.conf << 'EOF'
-# Caelestia KDE Plasma Environment
-export QT_QPA_PLATFORMTHEME='qt5ct'
-export QT_AUTO_SCREEN_SCALE_FACTOR='1'
-export XCURSOR_THEME='sweet-rainbow'
-export XCURSOR_SIZE='24'
-export XDG_CURRENT_DESKTOP=KDE
-export XDG_SESSION_DESKTOP=plasma
-EOF
+    echo '# Caelestia KDE Plasma Environment' > $config/environment.d/kde-caelestia.conf
+    echo 'export QT_QPA_PLATFORMTHEME=qt5ct' >> $config/environment.d/kde-caelestia.conf
+    echo 'export QT_AUTO_SCREEN_SCALE_FACTOR=1' >> $config/environment.d/kde-caelestia.conf
+    echo 'export XCURSOR_THEME=sweet-rainbow' >> $config/environment.d/kde-caelestia.conf
+    echo 'export XCURSOR_SIZE=24' >> $config/environment.d/kde-caelestia.conf
+    echo 'export XDG_CURRENT_DESKTOP=KDE' >> $config/environment.d/kde-caelestia.conf
+    echo 'export XDG_SESSION_DESKTOP=plasma' >> $config/environment.d/kde-caelestia.conf
 end
 
 # Apply KDE settings
