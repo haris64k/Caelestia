@@ -1,0 +1,67 @@
+[General]
+SingleKeyShortcuts=true
+
+[ActivityManager]
+_launch=Ctrl+Alt+A,none,Activity Manager
+
+[KDE Keyboard Layout Switcher]
+_launch=Meta+Space,none,Switch to Next Keyboard Layout
+
+[KGlobalAccel]
+_launch=Alt+F1,none,KDE Menu
+_launch=Alt+F2,none,KDE Menu
+_launch=Alt+F3,none,KDE Menu
+_launch=Alt+F4,none,KDE Menu
+_launch=Alt+F5,none,KDE Menu
+_launch=Alt+F6,none,KDE Menu
+_launch=Alt+F7,none,KDE Menu
+_launch=Alt+F8,none,KDE Menu
+_launch=Alt+F9,none,KDE Menu
+_launch=Alt+F10,none,KDE Menu
+_launch=Alt+F11,none,KDE Menu
+_launch=Alt+F12,none,KDE Menu
+_launch=Meta+1,none,Desktop 1
+_launch=Meta+2,none,Desktop 2
+_launch=Meta+3,none,Desktop 3
+_launch=Meta+4,none,Desktop 4
+_launch=Meta+5,none,Desktop 5
+_launch=Meta+6,none,Desktop 6
+_launch=Meta+7,none,Desktop 7
+_launch=Meta+8,none,Desktop 8
+_launch=Meta+9,none,Desktop 9
+_launch=Meta+0,none,Desktop 10
+_launch=Meta+T,none,Terminal
+_launch=Meta+W,none,Browser
+_launch=Meta+C,none,IDE
+_launch=Meta+S,none,Special Workspace
+_launch=Meta+Space,none,Application Launcher
+_launch=Ctrl+Alt+Delete,none,Session Menu
+_launch=Ctrl+Meta+Space,none,Media Play/Pause
+_launch=Ctrl+Meta+Alt+R,none,Restart Shell
+
+[KDE Keyboard Layout Switcher]
+_launch=Meta+Space,none,Switch to Next Keyboard Layout
+
+[kmix]
+_launch=Meta+Volume Up,none,Volume Up
+_launch=Meta+Volume Down,none,Volume Down
+_launch=Meta+Volume Mute,none,Volume Mute
+
+[org.kde.dolphin.desktop]
+_launch=Meta+E,none,File Manager
+
+[org.kde.konsole.desktop]
+_launch=Meta+T,none,Terminal
+
+[org.kde.spectacle.desktop]
+_launch=Meta+Print,none,Screenshot
+_launch=Meta+Shift+Print,none,Screenshot (Selection)
+_launch=Meta+Ctrl+Print,none,Screenshot (Window)
+
+[plasmashell]
+_launch=Meta+Space,none,Application Launcher
+_launch=Meta+Tab,none,Overview
+_launch=Meta+Esc,none,Overview
+
+[systemsettings.desktop]
+_launch=Meta+I,none,System Settings 

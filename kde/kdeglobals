@@ -1,0 +1,20 @@
+[General]
+Name=Caelestia
+shadeSortColumn=true
+
+[KDE]
+SingleClick=false
+
+[KDE-Global GUI Settings]
+fixed=JetBrains Mono NF,10,-1,5,50,0,0,0,0,0
+font=JetBrains Mono NF,10,-1,5,50,0,0,0,0,0
+menuFont=JetBrains Mono NF,10,-1,5,50,0,0,0,0,0
+taskbarFont=JetBrains Mono NF,10,-1,5,50,0,0,0,0,0
+toolBarFont=JetBrains Mono NF,10,-1,5,50,0,0,0,0,0
+activeFont=JetBrains Mono NF,10,-1,5,50,0,0,0,0,0
+
+[KDE-Global Theme Settings]
+widgetStyle=Breeze
+colorScheme=Caelestia
+icons=Papirus-Dark
+cursors=sweet-rainbow 
