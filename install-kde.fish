@@ -40,6 +40,10 @@ function log -a text
     _out cyan $text $argv[2..]
 end
 
+function success -a text
+    _out green $text $argv[2..]
+end
+
 function input -a text
     _out blue $text $argv[2..]
 end
@@ -73,23 +77,9 @@ end
 set -q _flag_noconfirm && set noconfirm '--noconfirm'
 set -q _flag_paru && set -l aur_helper paru || set -l aur_helper yay
 
-# Ensure HOME is set properly
-if test -z "$HOME"
-    set HOME $HOME
-end
-
 # Set config and state directories
-if test -n "$XDG_CONFIG_HOME"
-    set -l config $XDG_CONFIG_HOME
-else
-    set -l config $HOME/.config
-end
-
-if test -n "$XDG_STATE_HOME"
-    set -l state $XDG_STATE_HOME
-else
-    set -l state $HOME/.local/state
-end
+set -l config $HOME/.config
+set -l state $HOME/.local/state
 
 # Startup prompt
 set_color magenta
@@ -184,6 +174,10 @@ $aur_helper -S --needed \
     imagemagick \
     curl \
     trash-cli \
+    sweet-cursors \
+    papirus-icon-theme \
+    adw-gtk-theme \
+    ttf-jetbrains-mono-nerd \
     $noconfirm
 
 # Cd into dir
@@ -349,11 +343,25 @@ if confirm-overwrite $config/environment.d/kde-caelestia.conf
     echo 'export XDG_SESSION_DESKTOP=plasma' >> $config/environment.d/kde-caelestia.conf
 end
 
+# Install color scheme
+log 'Installing color scheme...'
+mkdir -p $HOME/.local/share/color-schemes
+if test -f (pwd)/kde/colors/Caelestia.colors
+    cp (pwd)/kde/colors/Caelestia.colors $HOME/.local/share/color-schemes/
+    success 'Color scheme installed'
+end
+
 # Apply KDE settings
 log 'Applying KDE Plasma settings...'
 kwriteconfig5 --file $config/kdeglobals --group General --key Name "Caelestia"
 kwriteconfig5 --file $config/kwinrc --group Compositing --key UnredirectFullScreen true
 kwriteconfig5 --file $config/kwinrc --group Compositing --key Backend "OpenGL"
+
+# Set color scheme and cursor theme
+kwriteconfig5 --file $config/kdeglobals --group General --key ColorScheme "Caelestia"
+kwriteconfig5 --file $config/kcminputrc --group Mouse --key CursorTheme "sweet-rainbow"
+kwriteconfig5 --file $config/kdeglobals --group Icons --key Theme "Papirus-Dark"
+kwriteconfig5 --file $config/kdeglobals --group KDE --key widgetStyle "Breeze"
 
 log 'Done! Please log out and log back in for all changes to take effect.'
 log 'You may need to manually configure some KDE Plasma settings through System Settings.' 
